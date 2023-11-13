@@ -16,9 +16,9 @@
         <span class="svg-container">
           <svg-icon icon="password" />
         </span>
-        <el-input placeholder="password" name="password" v-model="loginForm.password" />
+        <el-input placeholder="password" name="password" v-model="loginForm.password" ref="password" :type="passwordType"/>
         <span class="show-pwd">
-          <svg-icon icon="eye" />
+          <svg-icon :icon="passwordType === 'password' ? 'eye' : 'eye-open'" @click="onChangePwdType" />
         </span>
       </el-form-item>
 
@@ -31,6 +31,15 @@
 import { ref } from 'vue'
 import { validatePassword } from './rules'
 
+// 处理密码框文本显示状态
+const passwordType = ref('password')
+const onChangePwdType = () => {
+  if (passwordType.value === 'password') {
+    passwordType.value = 'text'
+  } else {
+    passwordType.value = 'password'
+  }
+}
 // 数据源
 const loginForm = ref({
   username: 'admin',
