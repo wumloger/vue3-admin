@@ -35,6 +35,7 @@ import variables from '@/styles/variables.module.scss'
 }
 
 .fixed-header {
+  transition: width #{$sideBarDuration};
   position: fixed;
   top: 0;
   right: 0;
