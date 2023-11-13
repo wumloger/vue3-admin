@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import installElementPlus from './plugins/element'
+import './permission'
 
 // 导入全局样式
 import './styles/index.scss'
