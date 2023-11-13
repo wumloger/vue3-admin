@@ -2,7 +2,7 @@
   <div class="app-wrapper" :class="[$store.getters.sidebarOpened ? 'openSidebar' : 'hideSidebar']">
     <!-- 左侧 menu -->
     <sidebar class="sidebar-container"
-    :style="{ background: variables.menuBg }"/>
+    :style="{ background:  $store.getters.cssVar.menuBg }"/>
     <div class="main-container">
       <div class="fixed-header">
         <!-- 顶部的 navbar -->
