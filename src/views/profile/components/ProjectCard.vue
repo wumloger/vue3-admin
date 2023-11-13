@@ -36,7 +36,7 @@
 import { ref } from 'vue'
 import MyAvatar from '@/components/MyAvatar'
 import projectList from '@/constant/project.json'
-const list = projectList.projectList
+const list = projectList.list
 
 </script>
 
