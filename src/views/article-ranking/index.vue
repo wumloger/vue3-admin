@@ -29,12 +29,24 @@
 <script setup>
 import articleList from '@/constant/article.json'
 import { dynamicData, selectDynamicLabel, tableColumns } from './dynamic'
+import { onMounted } from 'vue'
+import { tableRef, initSortable } from './sortable'
 
+// 表格拖拽相关
+const getTableData = () => { }
+onMounted(() => {
+  initSortable(tableData, getTableData)
+})
 const tableData = articleList.list
 console.log(tableData)
 </script>
 
 <style lang="scss" scoped>
+::v-deep(.sortable-ghost) {
+  opacity: 0.6;
+  color: #fff !important;
+  background: #304156 !important;
+}
 .article-ranking-container {
     padding: 40px;
 
