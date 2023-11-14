@@ -7,6 +7,7 @@
       </h1>
       <!-- <h1 class="logo-title" v-if="$store.getters.sidebarOpened">super-admin</h1> -->
     </div>
+    <span style="color: #fff; margin-left: 20px">{{ $filters.dateFilter(now) }}</span>
     <el-scrollbar>
       <sidebar-menu></sidebar-menu>
     </el-scrollbar>
