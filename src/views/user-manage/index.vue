@@ -2,7 +2,7 @@
   <div class="container">
     <el-card class="header">
       <div>
-        <el-button type="primary"> excel 导入</el-button>
+        <el-button type="primary" @click="onImportExcelClick"> excel 导入</el-button>
         <el-button type="success"> excel 导出 </el-button>
       </div>
     </el-card>
@@ -35,7 +35,14 @@
 <script setup>
 import { ref } from 'vue'
 import { getUserManageList } from '@/api/system'
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
+/**
+ * excel 导入点击事件
+ */
+const onImportExcelClick = () => {
+  router.push('/user/import')
+}
 const tableData = ref([])
 const total = ref(0)
 // 获取数据的方法
